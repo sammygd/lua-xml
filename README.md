@@ -2,7 +2,7 @@
 
 ##　xml解析
 
-　```
+  ```
    local xpath = require "xpath"
 	 local lom = require "lxp.lom"
 
@@ -22,16 +22,18 @@
   print (xpath.selectNodes(lom.parse(xmlTest),'/root/element/subelement/text()')[1])
 	-- get the first element
 	print (xpath.selectNodes(lom.parse(xmlTest),'/root/element[@id="1"]'))
-	```
 
-##　xml生成
-  
+  ```
+
+## xml生成
+
 	```
 	local generate = require("generate")
+
 	local message = {ToUserName = image.user,FromUserName = image.count,CreateTime = ngx.time(),MsgType = 'news',ArticleCount=1,Articles={lable='item',{Title = image.title,Description=image.descriptioni ,  PicUrl = image.pic_url,url = image.url }}}
 
   local xml_str , err = generate.generate(message)
- 
+
   if not xml_str then
      print ("xml generate error, error info :"  .. err )
   end
