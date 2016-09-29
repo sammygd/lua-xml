@@ -27,18 +27,15 @@
 
 ## xml生成
 
-	```
-	local generate = require("generate")
-
-	local message = {ToUserName = image.user,FromUserName = image.count,CreateTime = ngx.time(),MsgType = 'news',ArticleCount=1,Articles={lable='item',{Title = image.title,Description=image.descriptioni ,  PicUrl = image.pic_url,url = image.url }}}
-
+```
+  local generate = require("generate")
+  
+  local message = {ToUserName = image.user,FromUserName = image.count,CreateTime = ngx.time(),MsgType = 'news',ArticleCount=1,Articles={lable='item',{Title = image.title,Description=image.descriptioni ,  PicUrl = image.pic_url,url = image.url }}}
   local xml_str , err = generate.generate(message)
-
   if not xml_str then
      print ("xml generate error, error info :"  .. err )
   end
-
-	```
+```
 
 
 
